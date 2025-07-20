@@ -169,20 +169,22 @@ border-radius: 12px;
   .info {
     font-size: 1rem;
   }
+  .description{
+    max-height: 20vh;
+    overflow: hidden;
+  }
   .project img {
     object-fit: cover; /* Adjust image height for smaller screens */
     width: auto; /* Maintain aspect ratio */
     height: 65vh; /* Adjust height for smaller screens */
-  }
-  p {
-    max-height: 60px;
-    overflow: hidden;
   }
   button {
     width: auto;
     height: auto;
   }
 }
+
+
 @media (min-width: 601px) and (max-width: 1024px) {
   .container {
     display: grid;
