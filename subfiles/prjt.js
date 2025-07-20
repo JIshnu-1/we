@@ -1,4 +1,4 @@
-fetch('subfiles/project.html')
+fetch('project.html')
   .then(response => response.text())
   .then(html => {
     const container = document.getElementById('project-section-placeholder');
