@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jishnu's Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">  
+  <link rel="stylesheet" href="css/skill&experience.css">
+  <link rel="stylesheet" href="css/project.css"> <!-- Project CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">      <!-- Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">             <!-- Remix Icons(social media) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">    <!-- Font Awesome(for skill) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">           <!-- AOS CSS -->
+  <link href="https://fonts.cdnfonts.com/css/neuropol" rel="stylesheet">           <!-- Neuropol Font -->
+
+</head>
+<body>
+
+  <!-- Sidebar Toggle Button (Phones Only) -->
+  <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+  <!-- Sidebar -->
+  <aside class="sidebar" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="0">
+    <div class="logo" style="background-color: transparent;">JK </div>
+    <nav class="sidebar-nav">
+      <a href="#home" title="Home" data-aos="fade-right" data-aos-delay="250"><i class="ri-home-4-line"></i></a>
+      <a href="#about" title="About" data-aos="fade-right" data-aos-delay="350"><i class="ri-information-line"></i></a>
+      <a href="#skills" title="Skills" data-aos="fade-right" data-aos-delay="450"><i class="ri-medal-line"></i></a>
+      <a href="#projects" title="Projects" data-aos="fade-right" data-aos-delay="550"><i class="ri-folder-image-line"></i></a>
+      <a href="#contact" title="Contact" data-aos="fade-right" data-aos-delay="650"><i class="ri-contacts-line"></i></a>
+    </nav>
+  </aside>
+
+  <!-- Home Section -->
+  <section id="home" class="section light" data-aos="fade-zoom-in" data-aos-duration="1000">
+    <div class="section-content">
+      <h1 class="section-titleH" data-aos="fade-up" data-rellax-speed="-2">I'm JISHNU</h1>
+      <p class="section-desc" data-aos="fade-up" data-aos-delay="200" data-rellax-speed="-1">I’m a student at Government Engineering College, Kozhikode (GECK), pursuing a degree in Applied Electronics and Instrumentation. I have a strong interest in technology, creativity, and exploring innovative ideas through hands-on projects.</p>
+      <a href="#projects" class="section-btn" data-aos="zoom-in" data-aos-delay="400" >Explore Projects</a>
+    </div>
+    <div class="section-img">
+      <spline-viewer url="https://prod.spline.design/1zgRbPzOABemGQUb/scene.splinecode"></spline-viewer>
+    </div>
+  </section>
+
+<!-- About Section -->
+  <section id="about" class="section dark" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="200">
+    <div class="section-img" data-aos="zoom-in" data-aos-delay="300" data-rellax-speed="2">
+      <img src="images/About-img.png" alt="About Image" class="about-image" style="width: fit-content;">
+    </div>
+    <div class="section-content">
+      <h2 class="section-title" data-aos="zoom-in-up" data-rellax-speed="-1">About Me</h2>
+      <div class="section-desc">
+        <p data-aos="fade-right" data-aos-delay="200">
+          I’m a student at <strong>Government Engineering College, Kozhikode</strong> (<strong>GECK</strong>), pursuing Applied Electronics and Instrumentation.
+          <br>I have a deep interest in technology, creativity, and building innovative solutions through hands-on learning.
+        </p>
+        <p data-aos="fade-left" data-aos-delay="400">
+          I’ve developed a <strong>smart door lock system</strong> as part of a mini project, and I’m currently working on a <strong>drone-based vehicle detection system</strong> focused on solving real-world problems.
+          I enjoy exploring both hardware and software, and I’m always curious to learn, experiment, and create meaningful tech experiences.
+        </p>
+      </div>
+
+      <a href="#contact" class="section-btn" data-aos="zoom-in-left" data-aos-duration="500" data-aos-offset="200">Contact Me</a>
+      <a href="#projects" class="section-btn" data-aos="zoom-in-right" data-aos-duration="500" data-aos-offset="200">Explore My Work</a>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+<section id="skills" class="section light" data-aos="fade-up" data-aos-offset="250">
+  <div class="skills-experiences-wrapper">
+    
+    <div class="section-content" data-aos="zoom-out-right" data-aos-offset="300">
+      <h2 class="section-title" data-aos="fade-down">Skills</h2>
+      <div id="skills-section-placeholder" data-aos="fade-up" data-aos-delay="200"></div>
+      <br>
+      <a href="#projects" class="section-btn" data-aos="flip-up" data-aos-duration="600" data-aos-delay="250">
+        Ready to Explore?
+      </a>
+    </div>
+
+    <div class="section-content" data-aos="zoom-out-left" data-aos-offset="300">
+      <h2 class="section-title" data-aos="fade-down">Experiences</h2>
+      <div id="experience-section-placeholder" data-aos="fade-up" data-aos-delay="200"></div> 
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Projects Section -->
+  <section id="projects" class="section dark" data-aos="fade-up" data-aos-offset="320">
+    <h2 class="section-title" data-aos="fade-up">Projects</h2>
+    <div id="project-section-placeholder" data-aos="fade-up" data-aos-delay="200"></div>
+    <script src="subfiles/prjt.js"></script>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section light contact-center" id="contact" data-aos="fade-up" data-aos-duration="800">
+    <div class="section-content">
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Contact</h2>
+      <p class="section-desc" data-aos="fade-up" data-aos-delay="200">Curious about something or want to team up? Say hi!</p>
+      <a href="mailto:jishnuoffical5@gmail.com" class="section-btn" data-aos="zoom-in" data-aos-delay="300">Email Me</a>
+      <div class="spacer-sm"></div>
+      <a href="resume.pdf" class="section-btn" download data-aos="zoom-in" data-aos-delay="400">Peek at My Resume</a>
+      <div class="spacer-sm"></div>
+      <!-- Social Media Icons -->
+      <div class="icons" data-aos-offset="50" data-aos="fade-up">
+        <a href="https://www.instagram.com/j_shnu?igsh=MW54bXg5NGRtZW10ZA==" target="_blank" rel="noopener noreferrer" class="icon icon--instagram" aria-label="Instagram"data-aos="fade-up" data-aos-delay="150" >
+          <i class="ri-instagram-line"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/jishnu-k-6b7024255" target="_blank" rel="noopener noreferrer" class="icon icon--linkedin" aria-label="LinkedIn" data-aos-delay="250" data-aos="fade-up">
+          <i class="ri-linkedin-line"></i>
+        </a>
+        <a href="https://github.com/Jishnu314" target="_blank" rel="noopener noreferrer" class="icon icon--github" aria-label="GitHub" data-aos-delay="350" data-aos="fade-up" >
+          <i class="ri-github-line"></i>
+        </a>
+        <a href="https://www.reddit.com/u/Flashy_Constant_6448/s/zKh5tZSENe" target="_blank" rel="noopener noreferrer" class="icon icon--reddit" aria-label="Reddit" data-aos-delay="450" data-aos="fade-up">
+          <i class="ri-reddit-line"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer" style="text-align:center; padding: 1rem 0; background: #ffffff; color: #000000;">
+    &copy; 2025 Jishnu. All rights reserved.
+  </footer>
+
+  <script src="script.js"></script><!-- java -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script> <!-- Iconify JS -->
+  <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js"></script> <!-- Rellax JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>  <!-- AOS JS -->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.32/build/spline-viewer.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800, // Animation duration
+      offset: 200, // Offset (in px) from the original trigger points
+
+    });
+
+    // Initialize Rellax for parallax effect
+    var rellax = new Rellax('.rellax', {
+      speed: -2, // Speed of the parallax effect
+      easing: 'ease-in-out', // Easing function for the parallax effect
+      center: true, // Center the elements
+      mirror: false, // Disable mirroring
+      round: true, // Round the positions to integers 
+      vertical: true, // Enable vertical parallax
+      horizontal: false // Disable horizontal parallax
+
+    });
+  </script>
+    
+  
+
+  
+</body>
+</html>

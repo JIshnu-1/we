@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');   /* font for name */
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap'); /* font JK logo */
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth
+}
+
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: #ffffff;
+  color: #222;
+  line-height: 1.6;
+  padding-left: 80px;
+}
+/*================================================= Header styles ================================================================*/
+
+header {
+  width: 100%;
+  padding: 2rem 0 0 0;
+  text-align: center;
+  background: #fff;
+}
+
+nav {
+  margin: 0rem 0;
+}
+
+nav a {
+  color: #222;
+  text-decoration: none;
+  margin: 0 1.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: #ff6600;
+}
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 60vh;
+  padding: 4rem 8vw;
+  position: relative;
+  overflow: hidden;
+}
+.section.dark {
+  background: #181818;
+  color: #fff;
+  overflow: hidden;
+
+}
+.section.light {
+  background: #fff;
+  color: #222;
+  overflow: hidden;
+  
+}
+.section-content {
+  max-width: 40vw;
+  justify-content: space-between;
+}
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+.line {
+  display: block;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.section-btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  margin: 10px 0; 
+  border: 2px solid #222;
+  background: transparent;
+  color: inherit;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-decoration: auto;
+  transition: background 0.2s, color 0.2s;
+}
+.section.dark .section-btn {
+  border-color: #ffffff;
+}
+.section-btn:hover {
+  background: #ff6600;
+  color: #fff;
+  border-color: #ff6600;
+}
+.section-img {
+  max-width: 40vw;
+  height: auto;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Add this to your CSS for fade-zoom-in if not available */
+[data-aos="fade-zoom-in"] {
+  opacity: 0;
+  transform: scale(0.95);
+  transition-property: transform, opacity;
+}
+
+[data-aos="fade-zoom-in"].aos-animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/*================================================= Sidebar styles =================================================================*/
+/* Hide toggle button by default */
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1001;
+  padding: 8px 12px;
+  font-size: 22px;
+  background: #1111112a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: auto;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100%;
+  background: #181818;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+}
+.logo {
+  font-family: "Oxanium", sans-serif;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 650;
+  margin: 2rem 0 3rem 0;
+  letter-spacing: 1px;
+}
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.sidebar-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+.sidebar-nav a:hover {
+  color: #ff6600b2;
+  scale: 1.5;
+}
+.sidebar-nav a.active {
+    color: #ff6000; /* or any other color you want */
+    font-weight: bold;
+    scale: 1.5;
+  }
+/*======================================= home section============================ */
+#home {
+  height: 100vh;
+  min-height: 100vh;
+}
+.section-titleH {
+  font-family: 'Neuropol', sans-serif;
+  font-weight: 800;
+  font-size: 3.8rem;
+  font-style: normal;
+  color: rgb(0, 0, 0);
+}
+spline-viewer {
+  width: 125%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+}
+/*================================== CONTACT========================*/
+.contact-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  height: auto;
+  text-align: center;
+}
+
+.contact-center .section-content,
+.contact-center .section-img {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =============================Social Media Icons================================= */
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 26px;
+  color: #000000;
+  background-color: transparent;
+  border: 2px solid #000000;
+  transition: 0.25s;
+}
+
+.icon:hover {
+  outline-offset: 4px;
+  animation: shake 0.25s;
+}
+/* LinkedIn */
+.icon--linkedin:hover {
+  background-color: #0077b5;
+  outline: 2px solid #0077b5;
+}
+/* Instagram Hover Effect */
+.icon--instagram:hover {
+  background-image: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  outline: 2px solid #d6249f;
+}
+/* GitHub */
+.icon--github:hover {
+  background-color: #394149c4;
+  outline: 2px solid #24292e;
+}
+/* reddit */
+.icon--reddit:hover {
+  background-color: #ff4500;
+  outline: 2px solid #ff4500;
+}
+/* Optional Shake Animation for socail media */
+@keyframes shake {
+  0% { transform: rotate(0); }
+  20% { transform: rotate(-15deg); }
+  40% { transform: rotate(15deg); }
+  60% { transform: rotate(-10deg); }
+  80% { transform: rotate(10deg); }
+  100% { transform: rotate(0); }
+}
+/* Make all images responsive */
+img, .about-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.about-image {
+  filter: grayscale(-50%);
+}
+
+/* === Small Devices (Mobile Phones) === */
+@media (max-width: 600px) {
+  body {
+    padding-left: 0;
+    padding: 0rem;
+  }
+  .section {
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 2rem;
+  }
+  .section-content,
+  .section-img {
+    max-width: 100%;
+  }
+  .about-image{
+    max-width: 50%;
+  }
+  #about .section-title {
+    text-align: center;
+  }
+  .section-desc {
+    text-align: center;
+  }
+  .icon {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+  .sidebar-toggle {
+    display: block;
+  }
+  .logo{
+    display: none;
+  }
+  .sidebar {
+    display: none; /* hide sidebar initially */
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-top: 20%;
+    height: 100vh;
+    width: 20%;
+    background: #1111119c;
+    z-index: 1000;
+  }
+  .sidebar.active {
+    display: block; /* show when active */
+  }
+  spline-viewer{
+    display: none;
+  }
+}
+/* === Medium Devices (Tablets) === */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .section {
+    flex-direction: column;
+    padding: 3rem 3rem;
+    text-align: center;
+  }
+  .section-content,
+  .section-img {
+    max-width: 100%;
+  }
+  .about-image{
+    max-width: 40%;
+  }
+  .icon {
+    width: 55px;
+    height: 55px;
+    font-size: 24px;
+  }
+  spline-viewer{
+    display: none;
+  }
+}
+
+/* === Large Devices (Laptops) === */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .section {
+    padding: 4rem 6vw;
+  }
+  .section-title {
+    font-size: 2.8rem;
+  }
+  .section-img {
+    max-width: 40vw;
+  }
+  .about-image{
+    max-width: 80%;
+  }
+}
+
+/*=== desktop ===*/
+@media (min-width: 1441px) {
+  .section {
+    padding: 6rem 10vw;
+  }
+  .section-title {
+    font-size: 3rem;
+  }
+  .section-img,
+  .section-content {
+    max-width: 35vw;
+  }
+  .about-image{
+    max-width: 70%;
+  }
+}

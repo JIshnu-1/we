@@ -1,0 +1,228 @@
+/* === Project Section === */
+#projects.section {
+  min-height: 80vh;
+  height: auto;
+  display: block;
+}
+
+/* Container holding all projects in a horizontal row */
+.container {
+  display: flex; /* Flex layout */
+  height: 90vh; /* Full viewport height */
+  overflow: hidden; /* Prevent internal scrolling */
+}
+/* Individual project styling */
+.project {
+  flex: 1; /* Equal width for all projects */
+  padding: 2rem; /* Inner spacing */
+  position: relative; /* For absolutely positioned children like images */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  transition: all 0.3s ease-in-out; /* Smooth transition for changes */
+  overflow: hidden; /* Hide overflow */
+  background-color: transparent; /* Background color */
+  z-index: 0; /* Base layer */
+  opacity: 0; /* Start transparent */
+  animation: fadeUp 0.8s ease forwards; /* Fade-up animation on load */
+}
+/* Animation keyframes for project fade-in */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px); /* Start lower */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Move to final position */
+  }
+}
+
+/* Styling for the number element */
+.number {
+  font-size: 3.5rem; /* Large font */
+  font-weight: 700; /* Bold */
+  color: #b33322; /* Reddish color */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Subtle shadow for depth */
+  transition: color 0.3s ease; /* Smooth color transition */
+  z-index: 2; /* Above background image */
+  
+}
+
+/* Info block inside each project */
+.info {
+  margin-top: 1rem; /* Space above */
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8); /* Subtle shadow for depth */
+  z-index: 2; /* Above image */
+  transition: color 0.3s ease; /* Smooth transition */
+  font-size: larger;
+}
+
+/* Button styling */
+
+.button-list {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #fdfdfd;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.button:hover {
+  background: #ff6803;
+  color: #fff;
+  border-color: #ff6600;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+
+/* Project image styling */
+.project img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 80vh; /* Fills full height of project container */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: cover;
+  opacity: 0;
+  z-index: 1;
+  transition: all 0.4s ease;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  background-blend-mode: multiply;
+  filter: grayscale(0%); 
+  
+
+}
+
+
+/* Hover animation class triggered by JavaScript */
+.project.hover-effect {
+  background-color: transparent; /* Make background transparent */
+  color: white; /* Change text color */
+}
+
+/* Number text on hover */
+.project.hover-effect .number {
+  color: white;
+
+   /* White number on hover */
+}
+
+/* Info text on hover */
+.project.hover-effect .info {
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.199);
+border-radius: 12px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* White text on hover */
+   /* White info on hover */
+}
+.project.hover-effect .button {
+  border: 3px solid rgba(0, 0, 0, 0.39);
+  color: rgb(0, 0, 0);
+  z-index: 0;
+}
+
+
+
+/* Image on hover */
+.project.hover-effect img {
+  opacity: 1; /* Make image visible */
+  transform: translateX(-50%) scale(1.05); /* Slight zoom effect */
+  filter: grayscale(50%); /* Make image black and white */
+
+}
+
+
+/* Responsive Styles*/
+@media (max-width: 600px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    height: auto;
+  }
+  .project {
+    width: 100%;
+  }
+  .number {
+    font-size: 1.8rem;
+  }
+
+  .info {
+    font-size: 1rem;
+  }
+  .project img {
+    object-fit: cover; /* Adjust image height for smaller screens */
+    width: auto; /* Maintain aspect ratio */
+    height: 65vh; /* Adjust height for smaller screens */
+  }
+  p {
+    max-height: 60px;
+    overflow: hidden;
+  }
+  button {
+    width: auto;
+    height: auto;
+  }
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    height: auto;
+  }
+
+  .project {
+    width: 100%;
+    height: 100%;
+  }
+  .project img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .number {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .info {
+    font-size: 1rem;
+    margin-top: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+  }
+
+  .button-list {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
