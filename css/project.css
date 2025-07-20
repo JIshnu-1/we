@@ -155,8 +155,8 @@ border-radius: 12px;
 /* Responsive Styles*/
 @media (max-width: 600px) {
   .container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    display: flex;
+    flex-direction: column; /* Stack projects vertically */
     height: auto;
   }
   .project {
@@ -168,6 +168,7 @@ border-radius: 12px;
 
   .info {
     font-size: 1rem;
+    object-fit: cover;
   }
   .description{
     max-height: 20vh;
@@ -175,7 +176,6 @@ border-radius: 12px;
   }
   .project img {
     object-fit: cover; /* Adjust image height for smaller screens */
-    width: auto; /* Maintain aspect ratio */
     height: 65vh; /* Adjust height for smaller screens */
   }
   button {
