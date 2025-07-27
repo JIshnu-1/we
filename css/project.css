@@ -1,5 +1,5 @@
 /* === Project Section === */
-#projects.section {
+#projects {
   min-height: 80vh;
   height: auto;
   display: block;
@@ -7,224 +7,148 @@
 
 /* Container holding all projects in a horizontal row */
 .container {
-  display: flex; /* Flex layout */
-  height: 90vh; /* Full viewport height */
-  overflow: hidden; /* Prevent internal scrolling */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  min-height: auto;
 }
 /* Individual project styling */
-.project {
-  flex: 1; /* Equal width for all projects */
-  padding: 2rem; /* Inner spacing */
-  position: relative; /* For absolutely positioned children like images */
+
+.project-item {
+  position: relative;
+  padding: 2rem;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  transition: background 0.5s, color 0.5s, transform 0.5s;
+  border-left: 1px solid #222;
+}
+
+.project-item .img-box { 
+  max-width: 100%;
+  position: relative;
+  margin-bottom: 1.5px;
   align-items: flex-start;
-  text-align: left;
-  transition: all 0.3s ease-in-out; /* Smooth transition for changes */
-  overflow: hidden; /* Hide overflow */
-  background-color: transparent; /* Background color */
-  z-index: 0; /* Base layer */
-  opacity: 0; /* Start transparent */
-  animation: fadeUp 0.8s ease forwards; /* Fade-up animation on load */
 }
-/* Animation keyframes for project fade-in */
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px); /* Start lower */
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0); /* Move to final position */
-  }
+.project-item .img-box img {
+  margin-bottom: 2px;
+  position: relative;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
-/* Styling for the number element */
-.number {
-  font-size: 3.5rem; /* Large font */
-  font-weight: 700; /* Bold */
-  color: #b33322; /* Reddish color */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Subtle shadow for depth */
-  transition: color 0.3s ease; /* Smooth color transition */
-  z-index: 2; /* Above background image */
-  
+.main { 
+  opacity:1;
+  z-index:1;
 }
-
-/* Info block inside each project */
-.info {
-  margin-top: 1rem; /* Space above */
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8); /* Subtle shadow for depth */
-  z-index: 2; /* Above image */
-  transition: color 0.3s ease; /* Smooth transition */
-  font-size: larger;
+.wire {
+  opacity:0;
+  z-index:2;
+  display: none;
 }
-
-/* Button styling */
-
-.button-list {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
+.project-item:hover .main,
+.project-item.active .main { 
+  opacity:0;
+  display: none;
+  transform: scale(1.05) rotateY(10deg);
 }
-.button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: transparent;
-  color: #ffffff;
-  border: 2px solid #fdfdfd;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  cursor: pointer;
+.project-item:hover .wire,
+.project-item.active .wire{
+  opacity:1;
+  transform: scale(1.05) rotateY(0deg);
+  display: block;
 }
-.button:hover {
-  background: #ff6803;
-  color: #fff;
-  border-color: #ff6600;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-.button:active {
-  transform: translateY(0);
-  box-shadow: none;
-}
-
-
-/* Project image styling */
-.project img {
+.project-item .number {
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 80vh; /* Fills full height of project container */
-  width: auto; /* Maintain aspect ratio */
-  object-fit: cover;
+  top: 1rem;
+  font-size: 1rem;
+  color: #ff6000;
+}
+
+.project-item h2, .project-item h3 {
+  margin-bottom: 0.5rem;
+}
+
+.project-item p {
+  font-size: 0.9rem;
+  color: #6d6a6a;
+  max-width: auto;
+  justify-items: center;
+  height: 120px;
+  overflow: hidden;
   opacity: 0;
-  z-index: 1;
-  transition: all 0.4s ease;
-  pointer-events: none;
-  mix-blend-mode: multiply;
-  background-blend-mode: multiply;
-  filter: grayscale(0%); 
-  
-
+  transition: background 0.5s, color 0.5s, transform 0.5s, opacity 0.5s;
+}
+.project-item .view-btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #ff6000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+  opacity: 0;
+}
+.view-btn:hover{
+  background: transparent;
+  color: #ff6600;
+  border: 2px solid #ff6600;
+  transform: scale(1.05);
+}
+.project-item:hover .view-btn,
+.project-item.active .view-btn {
+  opacity: 1;
+}
+.project-item:hover,
+.project-item.active {
+  background: #fff;
+  color: #000;
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-
-/* Hover animation class triggered by JavaScript */
-.project.hover-effect {
-  background-color: transparent; /* Make background transparent */
-  color: white; /* Change text color */
+.project-item:hover p,
+.project-item.active p {
+  display: block;
+  opacity: 1;
+}
+.project-item .number:hover,
+.project-item.active .number {
+  transform: scale(1.2);
 }
 
-/* Number text on hover */
-.project.hover-effect .number {
-  color: white;
-
-   /* White number on hover */
-}
-
-/* Info text on hover */
-.project.hover-effect .info {
-  color: rgb(0, 0, 0);
-  background-color: rgba(255, 255, 255, 0.199);
-border-radius: 12px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* White text on hover */
-   /* White info on hover */
-}
-.project.hover-effect .button {
-  border: 3px solid rgba(0, 0, 0, 0.39);
-  color: rgb(0, 0, 0);
-  z-index: 0;
-}
-
-
-
-/* Image on hover */
-.project.hover-effect img {
-  opacity: 1; /* Make image visible */
-  transform: translateX(-50%) scale(1.05); /* Slight zoom effect */
-  filter: grayscale(50%); /* Make image black and white */
-
-}
-
-
-/* Responsive Styles*/
+/* Responsive Grid */
+/* Mobile Phones (up to 600px) */
 @media (max-width: 600px) {
   .container {
-    display: flex;
-    flex-direction: column; /* Stack projects vertically */
-    height: auto;
+    grid-template-columns: repeat(1, auto);
   }
-  .project {
-    width: 100%;
-  }
-  .number {
-    font-size: 1.8rem;
-  }
-
-  .info {
-    font-size: 1rem;
-    object-fit: cover;
-  }
-  .description{
-    max-height: 20vh;
-    overflow: hidden;
-  }
-  .project img {
-    object-fit: cover; /* Adjust image height for smaller screens */
-    height: 65vh; /* Adjust height for smaller screens */
-  }
-  button {
-    width: auto;
-    height: auto;
+  .project-item .number {
+    display: none;
   }
 }
 
-
-@media (min-width: 601px) and (max-width: 1024px) {
+/* Tablets (601px to 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
   .container {
-    display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    height: auto;
   }
+}
 
-  .project {
-    width: 100%;
-    height: 100%;
+/* Laptops (901px to 1200px) */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    min-height: 80vh;
   }
-  .project img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
+}
 
-  .number {
-    font-size: 2.5rem;
-    text-align: center;
-  }
-
-  .info {
-    font-size: 1rem;
-    margin-top: 1rem;
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-  }
-
-  .button-list {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-top: 1rem;
-  }
-
-  .button {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.95rem;
+/* Desktops (above 1200px) */
+@media (min-width: 1201px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    min-height: 80vh;
   }
 }
 

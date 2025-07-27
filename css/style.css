@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');   /* font for name */
-@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap'); /* font JK logo */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Libre+Barcode+39+Extended+Text&family=Playwrite+AU+QLD:wght@100..400&family=Syne+Mono&display=swap');
 /* Reset and base styles */
 * {
   margin: 0;
@@ -7,7 +6,7 @@
   box-sizing: border-box;
 }
 html {
-  scroll-behavior: smooth
+  scroll-behavior: auto;
 }
 
 body {
@@ -49,6 +48,7 @@ nav a:hover {
   padding: 4rem 8vw;
   position: relative;
   overflow: hidden;
+  
 }
 .section.dark {
   background: #181818;
@@ -193,12 +193,23 @@ nav a:hover {
   font-style: normal;
   color: rgb(0, 0, 0);
 }
+.scroll-text {
+  position: absolute;
+  right: 4rem;
+  bottom: 2rem;
+  font-size: 0.8rem;
+  color: #888;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
 spline-viewer {
   width: 125%;
   height: 100%;
   display: block;
   overflow: hidden;
 }
+
+
 /*================================== CONTACT========================*/
 .contact-center {
   display: flex;
@@ -259,11 +270,7 @@ spline-viewer {
   background-color: #394149c4;
   outline: 2px solid #24292e;
 }
-/* reddit */
-.icon--reddit:hover {
-  background-color: #ff4500;
-  outline: 2px solid #ff4500;
-}
+
 /* Optional Shake Animation for socail media */
 @keyframes shake {
   0% { transform: rotate(0); }
@@ -336,6 +343,9 @@ img, .about-image {
   spline-viewer{
     display: none;
   }
+  .scroll-text {
+    right: 1rem;
+  }
 }
 /* === Medium Devices (Tablets) === */
 @media (min-width: 601px) and (max-width: 1024px) {
@@ -359,6 +369,9 @@ img, .about-image {
   spline-viewer{
     display: none;
   }
+  .scroll-text {
+    right: 2rem;
+  }
 }
 
 /* === Large Devices (Laptops) === */
@@ -374,6 +387,9 @@ img, .about-image {
   }
   .about-image{
     max-width: 80%;
+  }
+  .scroll-text {
+    right: 3rem;
   }
 }
 
