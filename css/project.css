@@ -73,10 +73,10 @@
   color: #6d6a6a;
   max-width: auto;
   justify-items: center;
-  height: 120px;
+  min-height: 150px;
   overflow: hidden;
   opacity: 0;
-  transition: background 0.5s, color 0.5s, transform 0.5s, opacity 0.5s;
+  transition: max-height 0.5s ease-out, opacity 0.5s;
 }
 .project-item .view-btn {
   margin-top: 1rem;
@@ -107,6 +107,7 @@
   z-index: 2;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
+
 
 .project-item:hover p,
 .project-item.active p {
