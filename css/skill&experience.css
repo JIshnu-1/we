@@ -48,6 +48,15 @@
   flex-wrap: wrap; /* keeps it responsive */
 
 }
+
+.skills-experiences-wrapper .section-content {
+  flex: 1;
+  min-width: 300px; /* adjust as needed */
+}
+.experience-title {
+  justify-items: flex-start;
+  flex: auto;
+}
 .experience-desc {
   font-size: 0.9rem;
   padding-left: 12px;
@@ -55,11 +64,6 @@
 .experience-list {
   padding-left: 24px;
 }
-.skills-experiences-wrapper .section-content {
-  flex: 1;
-  min-width: 300px; /* adjust as needed */
-}
-
 
 /* === Responsive Styles === */
 
