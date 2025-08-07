@@ -306,6 +306,9 @@ img, .about-image {
   .section-img {
     max-width: 100%;
   }
+  #home .section-titleH {
+    padding-top: 30%;
+  }
   .about-image{
     max-width: 50%;
   }
@@ -409,3 +412,4 @@ img, .about-image {
     max-width: 70%;
   }
 }
+
